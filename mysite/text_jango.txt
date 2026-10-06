@@ -208,3 +208,8 @@ index.html یه فایل درست میکنی به نام  templates توی
 بعد فایلارو move میکنی توش 
 و باز توی website->views.py میگی که 
 return render(request,'website/index.html')
+--------------------------------------
+templates mysite:
+اول میری توی mysite>settings.py بعد بخش templates 
+ "DIRS":[BASE_DIR / 'mysite' / 'templates'], اینو میزنی 
+ بعدشم که طبق معمول همون python manage.py runserver
