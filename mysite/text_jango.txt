@@ -1,0 +1,210 @@
+backen=سرویس هایی که سمت سرور کار میکنه
+frontend=افرادی که صفحاتی که کاربر باهاشون در ارتباطه رو میسازن
+fullstack=ترکیب هردو
+----------------------------------------------------------------
+list_t=[1,2,4,6,7,[1,2,3]]
+list_t.append('begir') به اخر لیست بگیریو اضافه میکنه
+list_t.insert(1,'hello')یعنی جای ۱ هلو بزار 
+
+set تکراری ها رو نمیاره حذف میکنه
+list_t=[1111,222,3,4,5]
+set_t=set(list_t)لیست و ست میکنه 
+set.add(6)بهش ۶ اضافه میکنه اگر ۶ نداشت
+
+delta (b**2)-(4*a*c)
+------------------------------------------
+pip install --upgrade برای اپدیت و بروز رسانی 
+------------------------------------------
+tamrin:
+اگر خواستی چند تا فایلو باهم استفاده کنی یا صدا کنی 
+import (اسم اونجایی که میخوای )
+print(اسم اونجایی که میخوای. اون چیزی که میخوای بگه )
+یا
+from اسم import اونچیزی که میخوای بگه
+
+pip3 install virtualenv    نصب ماژول ویژوال ای ان وی 
+اگر بخوای دوتا محیط مجازی برای پایتون:
+python -m venv venv اینجوری اسم فولدر میشه vnv 
+source venv/bin/activate اینو بزنی فعال میشه 
+دیگه هرچی بخوای (ماژول) نصب کنی 
+-------------------------------------------------------
+try:
+    number = int(input("Enter a number: "))
+    print(number)
+except:
+    print("Wrong input")
+اینجا پایتون میگه:
+try → این قسمت رو امتحان کن.
+اگر این قسمت خطا داشت:
+except → بیا این کار رو انجام بده.
+مثلاً اگر کاربر وارد کند:
+Enter a number: hello
+خروجی:
+Wrong input
+ولی اگر وارد کند:
+Enter a number: 25
+خروجی:
+25
+خیلی ساده برای حفظ کردن:
+try:
+    # کدی که ممکن است خطا بدهد
+except:
+    # کاری که هنگام خطا انجام شود
+------------------------------------------------------
+Decorator
+    ↓
+my_decorator
+    ↓
+تابع اصلی را می‌گیرد
+    ↓
+Wrapper را می‌سازد
+    ↓
+Wrapper
+    ↓
+قبل و بعد از تابع اصلی کاری انجام می‌دهد
+Decorator = تابعی که رفتار یک تابع دیگر را تغییر/گسترش می‌دهد.
+Wrapper = تابع داخلی‌ای که تابع اصلی را می‌پیچد و معمولاً قبل/بعد از اجرای آن کاری انجام می‌دهد.
+@ برای 
+@my_decorator
+def hello():
+    print("Hello")
+    یعنی:
+def hello():
+    print("Hello")
+
+hello = my_decorator(hello) تابع هلو رو بده به مای دیکوریتور و نتیجه ای که برمیگردونه رو دوباره به اسم هلو ذحیره کن
+-----------------------------------------------
+Timer یعنی زمان‌سنج ⏱️
+timer یعنی می‌خوایم بفهمیم اجرای یک تابع چقدر طول کشیده.
+----------------------------------------------
+Selenium 
+روش راه اندازی chrome در Selenium
+
+from selenium import webdriver
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
+اینجوری صفحه گوگل باز میشه حالا اگر خواستی توش چیزی سرچ کنی توی کدت باید:
+find_element(By.نوع_جستجو, "مقدار")
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome()
+driver.get("https://www.google.com")
+search_bar = driver.find_element(By.NAME, 'q')برو توی سرچ المان اسم
+search_bar.send_keys("hello") هلو رو سرچ کن
+search_bar.send_keys(Keys.ENTER) حالا اینتر بزن که ران بشه 
+input()اینم میزاری که بمونه تو سایت 
+حالا میخوای ببینی مثلا چیا h3 هستن 
+اول میای
+from bs4 import beautifulsoup کارش اینه که دنبال داده هایی که ما میخوایم بگرده 
+soup=BeautifulSoup(driver.page_source,'html.parser) این باعث میشه کله source هارو برام بیاره
+soup.find('h3') حالا توی اون source ها میگم بگرد دنبال h3 هارو برام بیار 
+حالا میتونی بزاریش توی لیست:
+name_list=soup.find_all('h3')
+for name in name_list:
+print(name)
+اگر خواستی به صورت text باشه هم مینویسی
+name.text
+---------------------------------------
+ویژگی‌ها/خصوصیات یک شیء در پایتون به نام Attribute شناخته می‌شوند.
+ر پایتون، به تابعی که داخل یک کلاس تعریف می‌شود، Method (متد) می‌گویند.
+---------------------------------------
+Django 
+toye github search mikoni
+django-admin startproject mysite . توی ترمینال میزنیم 
+python3 manage.py runserver
+__init__.py این فولدر و محتویاتش باید جزو پروژه جنگو در نظر بگیری 
+ساختار کلی توی استراکچر اول 
+asgi.py نیاز نیست فعال
+settings.py تنظیمات پروژه رو نگهداری میکنه
+urls.py آدرس ها رو اینجا نگهداری میکنی
+wsgi.py پل ارتباطی با اپاچ 
+
+
+حالا توی settings.py:
+BASE_DIR:متغیر 
+
+SECRET_KEY:کلیدی که اطلاعات باهاش رمز میشه 
+
+DEBUG:وضعیتی که پروژه داره 
+ارزش DEBUG در هنگام بارگذاری بر روی سرور چه مقداری باید باشد؟  
+باید فالس باشه FALSE
+
+ALLOWED_HOSTS:زمانی که یسری دامنه داریم که میهوایم به هاست وصلش کنیم 
+
+INSTALLED_APPS=برنامه هایی که قراره به پروژه اضافه کنیم 
+
+MIDDLEWARE=مرد میانی 
+
+ROOT_URLCONF=میگه url های اصلی از چه فایلی سرچشمه میگیره
+
+WSIG_APPLICATION=
+STATIC_URL=فایل های سی اس اس و جاوا 
+MVT=عنوان معماری جنگو یاد می شود 
+در معماری MVT مدیریت دیتا بیس را کدام بخش به عهده دارد؟
+model جواب 
+در معماری MVT مدیریت بست دادن آدرس ها به صفحات را کدام عامل به عهده دارد؟
+view جواب
+در درخواست کاربر از یک پایانه وب برای دریافت اطلاعات کدام عملیات صورت می‌گیرد؟
+Get
+ نیز جا به جا نمودGET می‌توان پارامتر های یک فرم را ازطریق متد 
+HTTP: برای ارتباطه امن ازش استفاده میشه ولی به تنهایی امن نیست
+--------------------------------------------------------------
+برای ادرس تعریف کردن باید بری توی URLs.py
+توی بخش urlpatterns
+اسم پترن یا ادرس من باید از اون سمت چپیه(admin ) نشعت بگیره 
+path("admin/", admin.site.urls),
+---------------------------------------
+baraye run kardan service:
+1.you
+2.browser
+3.urls
+4.views
+5.models
+6.database
+barmigarde(tebgh axe)
+
+source venv/bin/activate
+python3 manage.py runserver:اینو میزنی ران بشه توی منیج دات پی وای بعد از توش لینک و درمیاری
+
+hala miri toye urls.py:
+esmi ke mikhay sitet dashte basharo samt chapie minevisi
+2.path('http-test',http_test)
+ghablesh(urlpatterns):حتما باید اسم اون فایلی که میخوای باشه رو ایمپورت کنی
+قبلش حتما باید نقطه بزاری ( . )
+1.from views import http_test,json_test
+3.path('json-test',json_test)
+حالا اسم همون فایلی که میخوای درست کنی , تابع مینویسی توش تا توی سایتت نمایش داده بشه
+حتما باید از request استفاده بشه 
+har tabei l mikhay:
+1.from django.http import HttpResponse,jsonResponse
+Response:یعنی پاسخ
+بعد دیگه اون تابعی که میخوای رو مینویسی
+-----------------------------------------------
+هروقت خواستی که ip هارو پاک کنی ک قاتی نشه:
+pkill -f "manage.py runserver"
+
+App:برای ساخت اپ ابتدا
+1.source..........
+2.python3 manage.py startapp (اسمی پوشه اپی که میخوای باشه)
+3.mysite-> settings.p -> INSTALLED_APPS -> اسم اپی که ساختیو مینویسی
+4.اون فایلی رو که مرحله قبل درست کردیو و توی یه فایل viewsمای سایت سیو کردیو 
+برش دار بیارش توی فایل ویوز اون app که ساختی 
+5. urls.py کپی کن یه فایل بساز توی همین پوشه اپی که ساختی به نام  mysite -> urls.py حالا تمام چیزایی که توی 
+6.  اونجا توضیح داده چیکار کنیurls mysite بعد باز برمیگردی توی همون 
+-------------------------------------------
+  اول رو خالی میزاریblog حالا اگر خواستی بدون اینکه حتما اسم اپی که ساختیو توی گوگل وارد کنی بیاره کافیه جای
+توی mysite -> urls.py 
+-------------------------------------------
+templates توی پوشه اپی که ساختیم باز یه پوشه میسازیم به نام 
+index.html یه فایل درست میکنی به نام  templates توی 
+  میزاری خودش بقیشو مینویسه ! توی پوشه ایندکس یه  
+بعد توی index.html بعد body شروع میکنی به نوشتن چیزی که میخوای تو صفحه اول نمایش بده 
+وقتی توی قالب مثلا <h3><h3> ya <p><p> 
+میری باز توی  views.py  اونجا با استفاده از render 
+جای HttpResponse-> render(request,'index.html')
+میتونی فایل های about, contact هم بسازی و همین کارارو کنی
+یه فولدر دیگه میسازی توی همون templates به نام website 
+بعد فایلارو move میکنی توش 
+و باز توی website->views.py میگی که 
+return render(request,'website/index.html')
